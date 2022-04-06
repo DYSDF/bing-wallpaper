@@ -8,7 +8,7 @@ fi
 
 pic_path=$1
 
-if [ -n "$(curl -s -m 5 -IL $1 | grep 200)" ]; then
+if [ -n "$(curl -s -m 60 -IL $1 | grep 200)" ]; then
   pic_path="/tmp/$(jot -r 1 10000000 99999999).jpg"
   curl -o $pic_path $1
 fi
